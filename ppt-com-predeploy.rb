@@ -11,14 +11,14 @@ require 'csv'
 %x(rm -rf ./www/content/post/*.md)
 
 #DEBUG
-dirname = File.basename(Dir.getwd)
-exec "echo #{dirname}"
+#dirname = File.basename(Dir.getwd)
+#exec "echo #{dirname}"
 
 # Build out each post:
 CSV.foreach('./data/posts.csv', headers: true) do |row|
     puts row.inspect # debug
     post_date = Time.now.strftime('%Y-%m-%dT%H:%M:%S%:z')
-    post_file = "../www/content/post/" + Time.now.strftime('%F-%H%M%S') + row["Title"].gsub(/\s+/, "") + ".md"
+    post_file = "./www/content/post/" + Time.now.strftime('%F-%H%M%S') + row["Title"].gsub(/\s+/, "") + ".md"
     #======( BEGIN FILE BUILD )=====+
     a = []
     a[0] = '---'
