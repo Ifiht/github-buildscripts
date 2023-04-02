@@ -10,6 +10,10 @@ require 'csv'
 # Clean out posts dir:
 %x(rm -rf ./www/content/post/*.md)
 
+#DEBUG
+dirname = File.basename(Dir.getwd)
+puts dirname
+
 # Build out each post:
 CSV.foreach('./data/posts.csv', headers: true) do |row|
     puts row.inspect # debug
