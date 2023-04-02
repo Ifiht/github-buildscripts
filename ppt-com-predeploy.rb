@@ -8,7 +8,8 @@ require 'csv'
 %x(wget -O ./data/posts.csv 'https://docs.google.com/spreadsheets/d/1YExvb6i9T6nXvKsMbP6DDd7jonxdBPITJGvQCpHTQwI/gviz/tq?tqx=out:csv&sheet=posts')
 
 # Clean out posts dir:
-%x(rm -rf ./www/content/post/*.md)
+%x(rm -f ./www/content/post/*.md)
+%x(mkdir -p ./www/content/post)
 
 #DEBUG
 #dirname = File.basename(Dir.getwd)
