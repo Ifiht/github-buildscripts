@@ -2,7 +2,7 @@
 require 'csv'
 
 # Prepare environment:
-%x(./scripts/env-setup.sh)
+#%x(./scripts/env-setup.sh)
 
 # Grab Google Sheets data:
 %x(wget -O ./data/posts.csv 'https://docs.google.com/spreadsheets/d/1YExvb6i9T6nXvKsMbP6DDd7jonxdBPITJGvQCpHTQwI/gviz/tq?tqx=out:csv&sheet=posts')
@@ -34,4 +34,4 @@ CSV.foreach('./data/posts.csv', headers: true) do |row|
 end
 
 # Execute build script:
-%x(./scripts/hugo-build.sh)
+#%x(./scripts/hugo-build.sh)
