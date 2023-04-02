@@ -14,7 +14,7 @@ require 'csv'
 CSV.foreach('./data/posts.csv', headers: true) do |row|
     puts row.inspect # debug
     post_date = Time.now.strftime('%Y-%m-%dT%H:%M:%S%:z')
-    post_file = "./www/content/post/" + Time.now.strftime('%F-%H%M%S') + row["Title"].gsub(/\s+/, "") + ".md"
+    post_file = "../www/content/post/" + Time.now.strftime('%F-%H%M%S') + row["Title"].gsub(/\s+/, "") + ".md"
     #======( BEGIN FILE BUILD )=====+
     a = []
     a[0] = '---'
@@ -26,7 +26,7 @@ CSV.foreach('./data/posts.csv', headers: true) do |row|
     a[6] = '---'
     a[7] = "#{row["Post"]}"
     File.open(post_file, 'w') {|f| f.write(a.join("\n"))}
-end  
+end
 
 # Execute build script:
 %x(./scripts/hugo-build.sh)
