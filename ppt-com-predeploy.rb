@@ -29,6 +29,7 @@ CSV.foreach('./data/posts.csv', headers: true) do |row|
     a[5] = 'draft: false'
     a[6] = '---'
     a[7] = "#{row["Post"]}"
+	sleep 1
     File.open(post_file, 'w') {|f| f.write(a.join("\n"))}
 end
 
