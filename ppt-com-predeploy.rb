@@ -12,7 +12,7 @@ require 'csv'
 
 #DEBUG
 dirname = File.basename(Dir.getwd)
-puts dirname
+exec "echo #{dirname}"
 
 # Build out each post:
 CSV.foreach('./data/posts.csv', headers: true) do |row|
