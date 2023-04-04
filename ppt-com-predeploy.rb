@@ -5,7 +5,7 @@ require 'csv'
 #%x(./scripts/env-setup.sh)
 
 # Grab Google Sheets data:
-%x(wget -O ./data/posts.csv 'https://docs.google.com/spreadsheets/d/1YExvb6i9T6nXvKsMbP6DDd7jonxdBPITJGvQCpHTQwI/gviz/tq?tqx=out:csv&sheet=posts')
+%x(wget -O ./data/posts.csv 'https://docs.google.com/spreadsheets/d/1YExvb6i9T6nXvKsMbP6DDd7jonxdBPITJGvQCpHTQwI/gviz/tq?tqx=out:csv&sheet=events')
 
 # Clean out posts dir:
 %x(rm -f ./www/content/post/*.md)
